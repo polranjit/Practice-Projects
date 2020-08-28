@@ -1,0 +1,9 @@
+<p>Search
+  <select name="searchBy" id="searchBy" [(ngModel)]="SelectedChoice">
+    <option value="byId">ById</option>
+    <option value="byName">ByName</option>
+</select>
+<input type="text" placeholder="Enter Name or Id" [(ngModel)]='InputParameter' >
+<button (click)="OnSearchClicked()">Search</button>
+</p>
+<!-- <input type="button" value="Add New Account Holder" (click)="OnAddClicked()" style="margin-left:10px;"> -->

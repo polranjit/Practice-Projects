@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<button style="color:blue; font-size: 15px; margin : 15px; padding: 5px;" (click)="addAccountHolder()">Add Account
+  Holder</button>
+<!-- Pop up COde -->
+
+<ng-template #content let-d="dismiss" let-c="close">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Confirm Deletion</h4>
+    <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title"
+      (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Are you sure you want to delete?</strong></p>
+    <p>All information associated to this user profile will be permanently deleted.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="close" aria-label="Close" class="btn btn-outline-secondary"
+      (click)="d('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="c('Ok click')">Ok</button>
+  </div>
+</ng-template>
+
+<table border="2">
+  <thead class="thead-dark">
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Contact No</th>
+    <th colspan="2">Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor='let a of AccountHoldersList'>
+      <td>{{a.id}}</td>
+      <td><a routerLinkActive="active" routerLink="/details/{{a.id}}">{{a.name}}</a></td>
+      <td>{{a.address}}</td>
+      <td>{{a.contactNo}}</td>
+      <td>
+        <!-- <button   routerLink="/edit/{{a.id}}" >Edit</button>
+      <button style="color: red; font-size: 10px" [content]=content (appDeletepopup)="deleteAccount(a.id)">Delete</button>
+     -->
+        <a href="/edit/{{a.id}}">
+          <i class="material-icons" data-toggle="tooltip" title="" routerLink="/edit/{{a.id}}"
+            style="color: blue; font-size: 20px" data-original-title="Edit"></i>
+        </a>
+        <a href="#">
+          <i class="material-icons" data-toggle="tooltip" title="" style="color: red; font-size: 20px" [content]=content
+            (appDeletepopup)="deleteAccount(a.id)" data-original-title="Delete"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

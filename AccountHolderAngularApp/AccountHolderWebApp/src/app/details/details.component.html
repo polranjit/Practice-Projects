@@ -1,0 +1,34 @@
+
+<h1>Account Holder</h1>
+<fieldset>
+    <legend>Details</legend>
+    <p>
+        Id:
+        {{accountHolder.id}}
+    </p>
+    <p>
+        Name:
+        {{accountHolder.name}}
+    </p>
+    <p>
+        Address:
+        {{accountHolder.address}}
+    </p>
+   
+    <p>
+        Mobile Number:
+        {{accountHolder.contactNo}}
+    </p>
+    <p>
+        Birth Date:
+        {{accountHolder.birthDate}}
+    </p>
+    <p>
+        Anniversary Date:
+        {{accountHolder.anniversaryDate}}
+    </p>
+</fieldset>
+<tr>
+<td ><a routerLinkActive="active" routerLink="/">Back</a></td>
+<td ><a routerLink="/edit/{{accountHolder.id}}" >Edit</a></td>
+</tr>

@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<form class="form-inline">
+  <div>
+  <h1>Account Holder Form</h1>
+
+  <div class="form-group row">
+    <label class="col-lg-3 col-form-label form-control-label">Name</label>
+    <div class="col-lg-9">
+        <input class="form-control" type="text" [(ngModel)]="accountHolder.name" name="name" id="name" value="{{accountHolder.name}}" />
+    </div>
+</div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label form-control-label">Address</label>
+  <div class="col-lg-9">
+      <input class="form-control" type="text" [(ngModel)]="accountHolder.address" name="address" id="address" value="{{accountHolder.address}}" />
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label form-control-label">Mobile No</label>
+  <div class="col-lg-9">
+      <input class="form-control" type="text" [(ngModel)]="accountHolder.contactNo" name="contactNo" id="contactNo" value="{{accountHolder.contactNo}}" />
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label form-control-label">Birth Date</label>
+  <div class="col-lg-9">
+    <input class="form-control" placeholder="yyyy-mm-dd" name="birthDate" [(ngModel)]="accountHolder.birthDate"
+    value={{accountHolder.birthDate}} [minDate]="minDate" ngbDatepicker #d="ngbDatepicker">
+  <button class="input-group-append" class="glyphicon glyphicon-calendar" (click)="d.toggle()"
+    type="button">
+  </button>
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label form-control-label">Anniversary Date</label>
+  <div class="col-lg-9">
+    <input class="form-control" placeholder="yyyy-mm-dd" name="anniversaryDate" [(ngModel)]="accountHolder.anniversaryDate"
+    value={{accountHolder.anniversaryDate}} [minDate]="minDate" ngbDatepicker #a="ngbDatepicker">
+  <button class="input-group-append" class="glyphicon glyphicon-calendar" (click)="a.toggle()"
+    type="button"></button>
+  </div>
+</div>
+  <!-- <label>Name:</label>
+  <input type="text" [(ngModel)]="accountHolder.name" name="name" id="name" value="{{accountHolder.name}}"><br><br>
+  <label>Address:</label>
+  <input type="text" [(ngModel)]="accountHolder.address" name="address" id="address"
+    value="{{accountHolder.address}}"><br><br>
+  <label>Mobile No:</label>
+  <input type="text" [(ngModel)]="accountHolder.contactNo" name="contactNo" id="contactNo"
+    value="{{accountHolder.contactNo}}"><br><br>
+   -->
+  <!-- <div class="form-group" class="input-group">
+    <div>
+      <label>Birthdate: </label>
+      <input class="form-control" placeholder="yyyy-mm-dd" name="birthDate" [(ngModel)]="accountHolder.birthDate"
+        value={{accountHolder.birthDate}} [minDate]="minDate" ngbDatepicker #d="ngbDatepicker">
+      <button class="input-group-append" class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+        type="button"></button>
+    </div>
+  </div> -->
+
+  <!-- <div class="form-group row" class="input-group">
+    <div>
+      <label>Anniversary Date:</label>
+      <input class="form-control" placeholder="yyyy-mm-dd" name="anniversaryDate"
+        [(ngModel)]="accountHolder.anniversaryDate" value={{accountHolder.anniversaryDate}} [minDate]="minDate"
+        ngbDatepicker #a="ngbDatepicker">
+      <button class="input-group-append" class="btn btn-outline-secondary calendar" (click)="a.toggle()"
+        type="button"></button>
+    </div>
+  </div> -->
+
+  <br><br>
+
+<hr />
+<div>
+  <a routerLinkActive="active" routerLink="/"><button type="button" (click)="OnClickSave()"
+      style="color: green;">Save</button></a>
+  <a routerLinkActive="active" routerLink="/"><button type="button" style="color: red;">Cancel</button></a>
+</div>
+</div>
+</form>
