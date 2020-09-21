@@ -1,0 +1,21 @@
+<div>
+    <h1>Account Holder Form</h1>
+<form #AccountData (ngSubmit)="AddNewAccount(AccountData.value)">
+   <!-- <label>Id</label>
+    <input type="text" name="Id" id="Id" ngModel placeholder="Id"><br><br>  -->
+<label>Name</label>
+<input type="text" name="accountName" id="accountName" ngModel placeholder="Name"><br><br>
+<label>Adddress</label>
+<input type="text" name="accountHolderAddress" id="accountHolderAddress" ngModel placeholder="address"><br><br>
+<label>Gender</label>
+<input type="text" name="accountHolderGender" id="accountHolderGender" ngModel placeholder="gender"><br><br>
+<label>Mobile No</label>
+<input type="text" name="mobileNo" id="mobileNo" ngModel placeholder="Contact"><br><br>
+<label>Birth Date</label>
+<input type="text" name="birthDate" id="birthDate" ngModel placeholder="Birth Date"><br><br>
+<label>Anniversary Date</label>
+<input type="text" name="anniversaryDate" id="anniversaryDate" ngModel placeholder="Anniversary Date">
+<br><br>
+<input type="button" value="Add">
+</form>
+</div>

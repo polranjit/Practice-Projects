@@ -1,0 +1,11 @@
+
+<label for="Choice">Select a Choice:</label>
+
+    <select id="Choice" name="optionSearch" [(ngModel)]="optionSearch">
+    <option [ngValue]="undefined" disabled selected>Choose</option>
+    <option value="id">Choose By Id</option>
+    <option value="Name">Choose By Name</option>
+</select>
+<br><br>
+  <input type="text" [(ngModel)]='name'>
+  <input type="button" (click)="sendMessage()"value="Submit"/>

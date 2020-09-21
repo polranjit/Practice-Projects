@@ -1,0 +1,29 @@
+
+<table border = 2>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>MobNo</th>
+        <th>Birthdate</th>
+        <th>Anniversarydate</th>
+        <th>Edit Record</th>
+        <th>Delete Record</th>
+    </tr>
+    <tr *ngFor ='let a of List'> 
+      <td>{{a.id}}</td>                                      
+  <td><a routerLinkActive="active" routerLink="/detail/{{a.id}}">{{a.accountName}}</a></td>
+  <td>{{a.accountHolderAddress}}</td>
+  <td>{{a.accountHolderGender}}</td>
+  <td>{{a.mobileNo}}</td>
+  <td>{{a.birthDate}}</td>
+  <td>{{a.anniversaryDate}}</td>
+  <td>  <a routerLinkActive="active" routerLink="/edit">Edit</a></td>
+   <td> <a routerLinkActive="active" routerLink="/delete" style="color: red;">Delete</a></td>
+    </tr>
+  </table>
+<br><br>
+
+<td><a routerLinkActive="active" routerLink="add">Add new Account</a></td>
+ 
